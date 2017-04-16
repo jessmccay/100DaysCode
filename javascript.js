@@ -681,3 +681,147 @@ var testObj = {
 
 var entreeValue = testObj["an entree"];   // Change this line
 var drinkValue = testObj["the drink"];    // Change this line
+
+// Instructions
+// Use the playerNumber variable to lookup player 16 in testObj using bracket notation.
+
+// Setup
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+// Only change code below this line;
+
+var playerNumber = 16;       // Change this Line
+var player = testObj[playerNumber];   // Change this Line
+
+// Instructions
+// Update the myDog object's name property. Let's change her name from "Coder" to "Happy Coder". You can use either dot or bracket notation.
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.name = "Happy Camper";
+
+// Setup
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Free Code Camp Campers"]
+};
+
+// Only change code below this line.
+myDog.name = "Happy Coder";
+
+// Instructions
+// Add a "bark" property to myDog and set it to a dog sound, such as "woof". You may use either dot or bracket notation.
+
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+ourDog.bark = "bow-wow";
+
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Free Code Camp Campers"]
+};
+
+// Only change code below this line.
+myDog.bark = "rarr";
+
+// We can also delete properties from objects like this:
+
+delete ourDog.bark;
+
+// Instructions
+// Delete the "tails" property from myDog. You may use either dot or bracket notation.
+// Example
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+
+delete ourDog.bark;
+
+// Setup
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["Free Code Camp Campers"],
+  "bark": "woof"
+};
+
+// Only change code below this line.
+
+delete myDog.tails;
+
+// Using Objects for Lookups
+// Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.
+//
+// Here is an example of a simple reverse alphabet lookup:
+//
+// var alpha = {
+//   1:"Z",
+//   2:"Y",
+//   3:"X",
+//   4:"W",
+//   ...
+//   24:"C",
+//   25:"B",
+//   26:"A"
+// };
+// alpha[2]; // "Y"
+// alpha[24]; // "C"
+//
+// var value = 2;
+// alpha[value]; // "Y"
+// Instructions
+// Convert the switch statement into a lookup table called lookup. Use it to lookup val and assign the associated string to the result variable.
+
+// Setup
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+  var lookup = {
+     "alpha":
+     "Adams",
+    "bravo":
+      "Boston",
+    "charlie":
+     "Chicago",
+    "delta":
+      "Denver",
+    "echo":
+       "Easy",
+    "foxtrot":
+     "Frank"
+  };
+
+  result = lookup[ val];
+
+  // Only change code above this line
+  return result;
+}
+
+// Change this value to test
+phoneticLookup("charlie");
