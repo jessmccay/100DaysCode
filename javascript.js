@@ -825,3 +825,153 @@ function phoneticLookup(val) {
 
 // Change this value to test
 phoneticLookup("charlie");
+
+
+// Day 12 100 Days of code! >>>>>
+// Instructions
+// Modify the function checkObj to test myObj for checkProp. If the property is found, return that property's value. If not, return "Not Found".
+
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+
+function checkObj(checkProp) {
+ if (myObj.hasOwnProperty(checkProp)){
+
+    return myObj[checkProp];
+}
+  return "Not Found";
+}
+
+// Test your code by modifying these values
+checkObj("gift");
+
+// Instructions
+// Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats array of strings.
+
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CS",
+      "8T",
+      "LP" ],
+    "gold": true
+  },
+  {
+    "artist": "Rihanna",
+    "title": "Unapologetic",
+    "release_year": 2013,
+    "formats": [
+      "CD",
+      "Vinel"
+    ]
+  }
+];
+
+// Instructions
+// Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents variable. Use bracket notation for properties with a space in their name.
+// Setup
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+// Only change code below this line
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
+
+// Instructions
+// Retrieve the second tree from the variable myPlants using object dot and array bracket notation.
+
+// Setup
+var myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1]; // Change this line
+
+// Instructions
+// Use a for loop to work to push the values 1 through 5 onto myArray.
+
+// Example
+var ourArray = [];
+
+for (var i = 0; i < 5; i++) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+for(var i = 1; i < 6; i++) {
+  myArray.push(i);
+}
+
+  // Instructions
+// Push the odd numbers from 1 through 9 to myArray using a for loop.
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+for (var i = 1; i < 10; i += 2){
+  myArray.push(i);
+}
+
+// Instructions
+// Push the odd numbers from 9 through 1 to myArray using a for loop.
+// Example
+var ourArray = [];
+
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+
+// Instructions
+// Declare and initialize a variable total to 0. Use a for loop to add the value of each element of the myArr array to total
+// Setup
+var myArr = [ 2, 3, 4, 5, 6];
+
+// Only change code below this line
+var total = 0;
+for(var i = 0; i < myArr.length; i ++) {
+  total += myArr[i];
+}
