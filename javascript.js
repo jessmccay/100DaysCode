@@ -1110,3 +1110,344 @@ function randomRange(myMin, myMax) {
 
 // Change these values to test your function
 var myRandom = randomRange(5, 15);
+
+
+//Day 15 >>>>
+// Sift through Text with Regular Expressions
+// Regular expressions are used to find certain words or patterns inside of strings.
+//
+// For example, if we wanted to find the word the in the string The dog chased the cat, we could use the following regular expression: /the/gi
+
+// Let's break this down a bit:
+
+// / is the start of the regular expression.
+
+// the is the pattern we want to match.
+//
+// / is the end of the regular expression.
+//
+// g means global, which causes the pattern to return all matches in the string, not just the first one.
+//
+// i means that we want to ignore the case (uppercase or lowercase) when searching for the pattern.
+//
+// Instructions
+// Select all the occurrences of the word and in testString.
+
+// You can do this by replacing the . part of the regular expression with the word and.
+
+// Setup
+var testString = "Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.";
+
+// Example
+var expressionToGetSoftware = /software/gi;
+var softwareCount = testString.match(expressionToGetSoftware).length;
+
+
+// Only change code below this line.
+
+var expression = /and/gi;  // Change this Line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var andCount = testString.match(expression).length;
+
+// Instructions
+// Use the \d selector to select the number of numbers in the string, allowing for the possibility of one or more digit.
+// Setup
+var testString = "There are 3 cats but 4 dogs.";
+
+// Only change code below this line.
+
+var expression = /\d+/g;  // Change this line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var digitCount = testString.match(expression).length;
+// Instructions
+// Use \s to select all the whitespace characters in the sentence string.
+// Setup
+var testString = "How many spaces are there in this sentence?";
+
+// Only change code below this line.
+
+var expression = /\s+/g;  // Change this line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+// var spaceCount = testString.match(expression).length;
+// Invert Regular Expression Matches with JavaScript
+// You can invert any match by using the uppercase version of the regular expression selector.
+
+// For example, \s will match any whitespace, and \S will match anything that isn't whitespace.
+
+// Instructions
+// Use /\S/g to count the number of non-whitespace characters in testString.
+
+// Setup
+var testString = "How many non-space characters are there in this sentence?";
+
+// Only change code below this line.
+
+var expression = /\S/g;  // Change this line
+
+// Only change code above this line
+
+// This code counts the matches of expression in testString
+var nonSpaceCount = testString.match(expression).length;
+
+// Before we dive into Object Oriented Programming, let's revisit JavaScript objects.
+
+// Give your motorBike object a wheels, engines and seats attribute and set them to numbers.
+
+var car = {
+  "wheels":4,
+  "engines":1,
+  "seats":5
+};
+
+var motorBike = {
+
+  // Only change code below this line.
+"wheels": 2,
+  "engines": 1,
+  "seats": 2
+};
+
+// You can think of a constructor as a description for the object it will create.
+
+// Have your MotorBike constructor describe an object with wheels, engines and seats properties and set them to numbers.
+
+var Car = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 5;
+};
+
+// Only change code below this line.
+
+var MotorBike = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 2;
+};
+
+// Note that it is important to use the new keyword when calling a constructor. This is how Javascript knows to create a new object and that all the references to this inside the constructor should be referring to this new object.
+
+// Now, once the myCar instance is created it can be used like any other object and can have its properties accessed and modified the same way you would usually. For example:
+
+// myCar.turboType = "twin";
+
+// Our myCar variable now has a property turboType with a value of "twin".
+
+// In the editor, use the Car constructor to create a new instance and assign it to myCar.
+
+// Then give myCar a nickname property with a string value.
+
+// Run tests (ctrl + enter)
+//
+var Car = function() {
+  this.wheels = 4;
+  this.engines = 1;
+  this.seats = 5;
+};
+
+// Only change code below this line.
+
+var myCar = new Car();
+ myCar.nickname = "Ellie";
+// Now give it a try yourself! Alter the Car constructor to use parameters to assign values to the wheels, seats, and engines properties.
+
+// Then call your new constructor with three number arguments and assign it to myCar to see it in action.
+
+var Car = function(wheels, seats, engines) {
+  //Change this constructor
+  this.wheels = wheels;
+  this.seats = seats;
+  this.engines = engines;
+};
+
+//Try it out here
+// var myCar= new Car(3,2,4);
+//
+// Make Object Properties Private
+// Objects have their own attributes, called properties, and their own functions, called methods.
+//
+// In the previous challenges, we used the this keyword to reference public properties of the current object.
+//
+// We can also create private properties and private methods, which aren't accessible from outside the object.
+//
+// To do this, we create the variable inside the constructor using the var keyword we're familiar with, instead of creating it as a property of this.
+//
+// This is useful for when we need to store information about an object but we want to control how it is used by outside code.
+//
+// For example, what if we want to store the speed our car is traveling at but we only want outside code to be able to modify it by accelerating or decelerating, so the speed changes in a controlled way?
+//
+// In the editor you can see an example of a Car constructor that implements this pattern.
+//
+// Now try it yourself! Modify the Bike constructor to have a private property called gear and two public methods called getGear and setGear to get and set that value.
+var speed = 10;
+
+ // these are public methods
+ this.accelerate = function(change) {
+   speed += change;
+ };
+
+ this.decelerate = function() {
+   speed -= 5;
+ };
+
+ this.getSpeed = function() {
+   return speed;
+ };
+};
+
+var Bike = function() {
+
+ // Only change code below this line.
+ var gear;
+
+ this.getGear = function() {
+  return gear;
+ };
+
+ this.setGear = function(num) {
+   gear = num;
+ };
+};
+
+var myCar = new Car();
+
+var myBike = new Bike();
+
+// The map method will iterate through every element of the array, creating a new array with values that have been modified by the callback function, and return it. Note that it does not modify the original array.
+
+// In our example the callback only uses the value of the array element (the val argument) but your callback can also include arguments for the index and array being acted on.
+//
+// Use the map function to add 3 to every value in the variable oldArray, and save the results into variable newArray. oldArray should not change.
+var oldArray = [1,2,3,4,5];
+
+// Only change code below this line.
+
+var newArray = oldArray.map(function(val){
+return val + 3;
+});
+
+// Condense arrays with reduce
+// The array method reduce is used to iterate through an array and condense it into one value.
+
+// To use reduce you pass in a callback whose arguments are an accumulator (in this case, previousVal) and the current value (currentVal).
+//
+// The accumulator is like a total that reduce keeps track of after each operation. The current value is just the next element in the array you're iterating through.
+//
+// reduce has an optional second argument which can be used to set the initial value of the accumulator. If no initial value is specified it will be the first array element and currentVal will start with the second array element.
+//
+// Here is an example of reduce being used to subtract all the values of an array:
+//
+// var singleVal = array.reduce(function(previousVal, currentVal) {
+//   return previousVal - currentVal;
+// }, 0);
+// Use the reduce method to sum all the values in array and assign it to singleVal.
+
+var array = [4,5,6,7,8];
+var singleVal = 0;
+
+// Only change code below this line.
+
+singleVal = array.reduce(function(previousVal, currentVal) {
+  return previousVal + currentVal;
+}, 0);
+console.log(singleVal);
+
+// Filter Arrays with filter
+// The filter method is used to iterate through an array and filter out elements where a given condition is not true.
+//
+// filter is passed a callback function which takes the current value (we've called that val) as an argument.
+//
+// Any array element for which the callback returns true will be kept and elements that return false will be filtered out.
+//
+// The following code is an example of using filter to remove array elements that are equal to five:
+//
+// Note: We omit the second and third arguments since we only need the value
+//
+// array = array.filter(function(val) {
+//   return val !== 5;
+// });
+// Use filter to create a new array with all the values from oldArray which are less than 6. The oldArray should not change.
+var oldArray = [1,2,3,4,5,6,7,8,9,10];
+
+// Only change code below this line.
+
+var newArray = oldArray.filter(function(val) {
+  return val < 6;
+});
+console.log(newArray);
+
+// Sort Arrays with sort
+// You can use the method sort to easily sort the values in an array alphabetically or numerically.
+//
+// Unlike the previous array methods we have been looking at, sort actually alters the array in place. However, it also returns this sorted array.
+//
+// sort can be passed a compare function as a callback. The compare function should return a negative number if a should be before b, a positive number if a should be after b, or 0 if they are equal.
+//
+// If no compare (callback) function is passed in, it will convert the values to strings and sort alphabetically.
+//
+// Here is an example of using sort with a compare function that will sort the elements from smallest to largest number:
+//
+// var array = [1, 12, 21, 2];
+// array.sort(function(a, b) {
+//   return a - b;
+// });
+// Use sort to sort array from largest to smallest.
+//
+// Further explanation on the .sort() method can be found here.
+
+var array = [1, 12, 21, 2];
+
+// Only change code below this line.
+
+array.sort(function(a,b){
+  return b - a;
+});
+
+// Use reverse to reverse the array variable and assign it to newArray.
+
+var array = [1,2,3,4,5,6,7];
+var newArray = [];
+
+// Only change code below this line.
+
+newArray = array.reverse();
+
+// Use .concat() to concatenate concatMe onto the end of oldArray and assign it to newArray.
+
+var oldArray = [1,2,3];
+var newArray = [];
+
+var concatMe = [4,5,6];
+
+// Only change code below this line.
+
+newArray = oldArray.concat(concatMe);
+
+// Here is an example of split being used to split a string at every s character:
+//
+// var array = string.split('s');
+//
+// Use split to create an array of words from string and assign it to array.
+var string = "Split me into an array";
+var array = [];
+
+// Only change code below this line.
+
+array = string.split(" ");
+
+// Use the join method to create a string from joinMe with spaces in between each element and assign it to joinedString.
+var joinMe = ["Split","me","into","an","array"];
+var joinedString = '';
+
+// Only change code below this line.
+
+joinedString = joinMe.join(" ");
