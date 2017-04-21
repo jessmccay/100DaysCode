@@ -1451,3 +1451,45 @@ var joinedString = '';
 // Only change code below this line.
 
 joinedString = joinMe.join(" ");
+
+//Day 16 >>
+//Algorithms !>>
+// Reverse a String
+// Reverse the provided string.
+//
+// You may need to turn the string into an array before you can reverse it.
+//
+// Your result must be a string.
+function reverseString(str) {
+   array = str.split("");
+  console.log(array);
+   array.reverse();
+  console.log(array);
+
+  return array.join("");
+
+}
+
+reverseString("hello");
+
+// Factorialize a Number
+// Return the factorial of the provided integer.
+//
+// If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+//
+// Factorials are often represented with the shorthand notation n!
+//
+// For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+function factorialize(num) {
+ if (num < 0)
+        return -1;
+  else if (num === 0)
+      return 1;
+  else {
+      return (num * factorialize(num - 1));
+  }
+
+
+}
+
+factorialize(5);
