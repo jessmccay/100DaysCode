@@ -1480,6 +1480,8 @@ reverseString("hello");
 // Factorials are often represented with the shorthand notation n!
 //
 // For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+//this is the searched for solution
 function factorialize(num) {
  if (num < 0)
         return -1;
@@ -1493,3 +1495,75 @@ function factorialize(num) {
 }
 
 factorialize(5);
+
+//Day 17 >>
+//this is my solution
+
+function factorialize(num) {
+  //must declare var j before loop
+var j = 1;
+  for(i=1;i<=num;i++){
+    j = j*i;
+  }
+  return j;
+}
+
+
+factorialize(5);
+
+// Check for Palindromes
+// Return true if the given string is a palindrome. Otherwise, return false.
+//
+// A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
+//
+// Note
+// You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) and turn everything lower case in order to check for palindromes.
+function palindrome(str) {
+  // Good luck
+
+  //this takes out all special characters
+  var newStr = str.replace(/[\W_]/g,"");
+
+//turn str into an array
+  var splitStr = newStr.split("");
+  //use array built in method reverse
+  var reverseStr = splitStr.reverse();
+  //turn back into a string
+  var joinStr = reverseStr.join("");
+  var smalStr = joinStr.toLowerCase();
+  var lilStr = newStr.toLowerCase();
+
+  if(smalStr === lilStr){
+    return true;
+  }
+
+  else{
+    return false;
+  }
+}
+
+
+
+palindrome("eye");
+
+// Find the Longest Word in a String
+// Return the length of the longest word in the provided sentence.
+
+// Your response should be a number.
+
+function findLongestWord(str) {
+  //turn string into Array
+  var newStr = str.split(" ");
+  var max = 0;
+  for(var i = 0; i< newStr.length; i ++){
+
+    if(max < newStr[i].length){
+      //set max to the longer of the two
+      max = newStr[i].length;
+    }
+  }
+  return max;
+
+}
+
+findLongestWord("The quick brown fox jumped over the lazy dog");
