@@ -1567,3 +1567,73 @@ function findLongestWord(str) {
 }
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
+
+// Day 18 >>
+// Title Case a Sentence
+// Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+// For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+function titleCase(str) {
+  return str
+        .toLowerCase()
+        .split(' ')
+        .map(function(strings) {
+            return strings[0].toUpperCase() + strings.substr(1);
+        })
+        .join(' ');
+}
+
+titleCase("I'm a little tea pot");
+
+// Return Largest Numbers in Arrays
+// Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+// Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+
+function largestOfFour(arr) {
+  // You can do this!
+  //we will store the largest numbers from our arrays here.
+  var largestNumber = [0,0,0,0];
+  //iterate through arrays
+  for(var i=0; i< arr.length; i++){
+
+    //iterate through indexes of each array
+    for(var j=0; j< arr[i].length; j++){
+      if (arr[i][j] > largestNumber[i]){
+
+        //replace current with value of the current index of the current array
+        largestNumber[i] = arr[i][j];
+       }
+    }
+  }
+  return largestNumber;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+// Confirm the Ending
+// Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+// This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+          //start string index at the end and then go back according to the number of letters in the target
+  return str.substring(str.length-target.length, str.length) == target;
+}
+
+confirmEnding("Bastian", "n");
+
+// Repeat a string repeat a string
+// Repeat a given string (first argument) num times (second argument). Return an empty string if num is not a positive number.
+function repeatStringNumTimes(str, num) {
+  // repeat after me
+  if(num > 0){
+    return str.repeat(num);
+  }
+  else{
+    return "";
+  }
+}
+
+repeatStringNumTimes("abc", 3);
