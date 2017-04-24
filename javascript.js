@@ -1637,3 +1637,34 @@ function repeatStringNumTimes(str, num) {
 }
 
 repeatStringNumTimes("abc", 3);
+
+
+//Day 19 >>
+// Truncate a string
+// Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+//
+// Note that inserting the three dots to the end will add to the string length.
+//
+// However, if the given maximum string length num is less than or equal to 3, then the addition of the three dots does not add to the string length in determining the truncated string.
+function truncateString(str, num) {
+  var newStr = "";
+  if(str.length > num){
+    //check if num < = 3 so we always return at least one letter 
+    if (num <= 3){
+      for(var i = 0; i< num; i++){
+        newStr += str[i];
+      }
+   }
+   // change num to make room for ...
+  for(var j = 0; j < num-3; j++) {
+      newStr += str[j];
+    }
+    return newStr += "...";
+  }
+  else {
+    return str;
+  }
+
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 11);
