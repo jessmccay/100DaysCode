@@ -1649,7 +1649,7 @@ repeatStringNumTimes("abc", 3);
 function truncateString(str, num) {
   var newStr = "";
   if(str.length > num){
-    //check if num < = 3 so we always return at least one letter 
+    //check if num < = 3 so we always return at least one letter
     if (num <= 3){
       for(var i = 0; i< num; i++){
         newStr += str[i];
@@ -1668,3 +1668,77 @@ function truncateString(str, num) {
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
+// Day 20 >>
+// Chunky Monkey
+// Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+//
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
+function chunkArrayInGroups(arr, size) {
+//start with empty array to push to
+  var result = [];
+  //check array length to make sure we can splice it
+    while (arr.length > size) {
+      //send this part of the array into the result array
+      result.push(arr.splice(0, size));
+    }
+    //push the remainding array(its own array) into result array
+    if (arr.length){
+      result.push(arr);
+    }
+
+    return result;
+
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+
+// Slasher Flick
+// Return the remaining elements of an array after chopping off n elements from the head.
+//
+// The head means the beginning of the array, or the zeroth index.
+//
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
+
+function slasher(arr, howMany) {
+  // it doesn't always pay to be first
+
+  // just take out starting at the 0th index as many is 'howmany'
+  arr.splice(0,howMany);
+  return arr;
+}
+
+slasher([1, 2, 3], 2);
+
+// Mutations
+// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+//
+// For example, ["hello", "Hello"], should return true because all of the letters in the second string are present in the first, ignoring case.
+//
+// The arguments ["hello", "hey"] should return false because the string "hello" does not contain a "y".
+//
+// Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
+//
+// Remember to use Read-Search-Ask if you get stuck. Write your own code.
+//
+// Here are some helpful links:
+function mutation(arr) {
+  var arr1 = arr[0];
+  var arr2 = arr[1];
+
+
+  //iterate through they entire element of the 2nd index of the array
+    for(var i=0; i < arr2.length; i++){
+      //lowercase to ensure not getting false negative comparing same letters
+      var checkArr = arr1.toLowerCase().indexOf(arr2[i].toLowerCase());
+
+      //if false (-1 is for false)
+      if (checkArr === -1) {
+        return false;
+      }
+    }
+  return true;
+
+}
+
+mutation(["hello", "hey"]);
