@@ -1812,3 +1812,38 @@ function bouncer(arr) {
 }
 
 bouncer([7, "ate", "", false, 9]);
+
+// Seek and Destroy
+// You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+function destroyer(arr) {
+  // Remove all the values
+  var temp = [];
+for (var i = 1; i < arguments.length; i++) {
+    temp.push(arguments[i]);
+    arr = arguments[0].filter(function(value) {
+        return ( value !== temp[i - 1]) ;
+    });
+}
+  return arr;
+
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// Where do I belong
+// Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+//
+// For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+//
+// Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has been sorted it will look like [3,5,20] and 19 is less than 20 (index 2) and greater than 5 (index 1).
+function getIndexToIns(arr, num) {
+  // Find my place in this sorted array.
+   arr.push(num);
+    arr.sort(function(a, b) {
+    return a - b;
+  });
+  return arr.indexOf(num);
+}
+
+getIndexToIns([40, 10, 60], 50);
