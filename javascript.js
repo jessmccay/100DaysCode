@@ -1742,3 +1742,58 @@ function mutation(arr) {
 }
 
 mutation(["hello", "hey"]);
+
+// day 21 >>
+//I was first trying to take this approach>
+// if(arr[i] !== false || arr[i] !== null || arr[i] !== 0 || arr.length === 0 || arr[i] === undefined || arr[i].isNaN() === true)
+//After coming back the next day I realize I dont have to do all of this work!
+// >>>>>>>>>>>>>> so >>>>>>>
+
+
+
+// I still havent solved it >>
+// what i have been trying >>>
+function bouncer(arr) {
+  // Don't show a false ID to this bouncer.
+  var trutheez = [];
+  for(var i=0; i < arr.length; i++){
+    arr.filter(function(arr[i] === null){
+      return arr;
+    })
+               }
+
+
+
+   if(arr[i] !== false && arr[i] !== null && arr[i] !== 0 && arr[i] !== "" && arr[i] !== undefined) {
+     trutheez.push(arr[i]);
+    else if( arr[i] )
+   }
+
+
+//     if(arr[i] === 0){
+//       arr.slice(arr[i]);
+//     }
+//     else if(arr[i] === false){
+//       arr.slice(arr[i]);
+//     }
+//     else if(isNaN(arr[i]) === true){
+//       arr.slice(arr[i]);
+//     }
+//     else if(arr[i] === ""){
+//       arr.slice(arr[i]);
+//     }
+//     else if(arr[i] === undefined){
+//       arr.slice(arr[i]);
+//     }
+//     else if(arr[i] === null){
+//       arr.slice(arr[i]);
+//     }
+//     if(arr[i] !== false || arr[i] !== null || arr[i] !== 0 || arr.length === 0 || arr[i] === undefined || arr[i].isNaN() === true)
+
+//     trutheez.push(arr[i]);
+//     console.log(trutheez);
+  }
+  return trutheez;
+}
+
+bouncer([7, "ate", NaN, false, 9]);
