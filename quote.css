@@ -1,0 +1,14 @@
+body{
+background-color: #ff0000
+}
+h1 {
+  font-style: oblique;
+}
+
+.button {
+  color: black;
+   &:hover
+    background-color: #fff
+    border-color: transparent
+    color: #444
+}
