@@ -1,14 +1,22 @@
-body{
-background-color: #ff0000
+body {
+  background-color: rgb(50, 200, 150) !important;
 }
 h1 {
-  font-style: oblique;
+  font-family: 'Anton', sans-serif !important;
+  text-align: center;
+  margin-bottom: 65px !important;
+}
+.box {
+  background-color: rgba(55, 55, 55, 0.5);
+  color:white;
+  padding:20px;
+}
+h3 {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 22pt !important;
+
 }
 
 .button {
   color: black;
-   &:hover
-    background-color: #fff
-    border-color: transparent
-    color: #444
 }

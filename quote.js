@@ -4,22 +4,22 @@ var quotes = ["'I attribute my success to this: I never gave or took any excuse.
   $(".button").on("click", function (){
   var ranNum = Math.floor(Math.random() * 10);
   console.log(ranNum);
-    if(ranNum === 10) {$("#quote").append (quotes[0]);
+    if(ranNum === 10) {$("#quote").html (quotes[0]);
                       }
-    else if(ranNum === 1) {$("#quote").append (quotes[1]);
+    else if(ranNum === 1) {$("#quote").html (quotes[1]);
     }
-   else if(ranNum === 2) {$("#quote").append (quotes[2]);
+   else if(ranNum === 2) {$("#quote").html (quotes[2]);
 }
-else if(ranNum === 3) {$("#quote").append (quotes[3]);
-}                          else if(ranNum === 4) {$("#quote").append (quotes[4]);
-                                                 }                             else if(ranNum === 5) {$("#quote").append (quotes[5]);
-                                                                                                     }                                                         else if(ranNum === 6) {$("#quote").append (quotes[6]);
- }                                                           else if(ranNum === 7) {$("#quote").append (quotes[7]);
+else if(ranNum === 3) {$("#quote").html (quotes[3]);
+}                          else if(ranNum === 4) {$("#quote").html (quotes[4]);
+                                                 }                             else if(ranNum === 5) {$("#quote").html (quotes[5]);
+                                                                                                     }                                                         else if(ranNum === 6) {$("#quote").html (quotes[6]);
+ }                                                           else if(ranNum === 7) {$("#quote").html (quotes[7]);
                                                                                    }
- else if(ranNum === 8) {$("#quote").append (quotes[8]);
+ else if(ranNum === 8) {$("#quote").html (quotes[8]);
                        }
-else if(ranNum === 9) {$("#quote").append (quotes[9]);
+else if(ranNum === 9) {$("#quote").html (quotes[9]);
     }
 
     });
-});                                                                    
+});                                                                      
