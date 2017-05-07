@@ -1,6 +1,4 @@
-body {
-  background-color: rgb(50, 200, 150) !important;
-}
+
 h1 {
   font-family: 'Anton', sans-serif !important;
   text-align: center;
@@ -9,14 +7,16 @@ h1 {
 .box {
   background-color: rgba(55, 55, 55, 0.5);
   color:white;
-  padding:20px;
+  height: 300px;
 }
 h3 {
+  padding-top: 70px;
   font-family: 'Great Vibes', cursive !important;
   font-size: 22pt !important;
 
 }
 
-.button {
-  color: black;
+.button, .btn {
+  background-color: black;
+  margin-bottom: 0px;
 }
